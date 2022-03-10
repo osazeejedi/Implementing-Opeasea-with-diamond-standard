@@ -1,0 +1,30 @@
+struct {
+_itemIds;
+_itemsSold;
+owner;
+listingPrice;
+mapping(uint256 => MarketItem)  idMarketItem;
+}
+
+
+struct MarketItem {
+        uint itemId;
+        address nftContract;
+        uint256 tokenId;
+        address payable seller; //person selling the nft
+        address payable owner; //owner of the nft
+        uint256 price;
+        bool sold;
+}
+
+
+
+event MarketItemCreated (
+        uint indexed itemId,
+        address indexed nftContract,
+        uint256 indexed tokenId,
+        address  seller,
+        address  owner,
+        uint256 price,
+        bool sold
+    );
